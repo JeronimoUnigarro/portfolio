@@ -1,2 +1,19 @@
 @import "tailwindcss";
+ 
+@theme {
+    --color-one: hsl(225, 71%, 27%); 
+    --color-one-light: hsl(225, 71%, 40%); 
+    --color-one-lighter: hsl(225, 71%, 60%); 
 
+    --color-two: hsl(0, 0%, 12%); 
+    --color-two-light: hsl(0, 0%, 25%); 
+    --color-two-lighter: hsl(0, 0%, 40%); 
+
+    --color-three: hsl(0, 0%, 100%); 
+    --color-three-light: hsl(0, 0%, 95%); 
+    --color-three-lighter: hsl(0, 0%, 85%); 
+
+    --color-four: hsl(204, 94%, 66%); 
+    --color-four-light: hsl(204, 94%, 75%); 
+    --color-four-lighter: hsl(204, 94%, 85%); 
+}
