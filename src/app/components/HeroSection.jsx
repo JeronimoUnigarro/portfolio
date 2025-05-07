@@ -82,10 +82,7 @@ export default function HeroSection() {
           repeatDelay: 0.5
         }}
       >
-        <a href="#about" className="flex flex-col items-center">
-          <span className="text-sm text-muted-foreground mb-2">Descubre más</span>
-          <ArrowDown className="w-5 h-5 text-primary animate-bounce" />
-        </a>
+        
       </motion.div>
     </section>
   )

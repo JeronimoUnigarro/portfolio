@@ -6,7 +6,6 @@ import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
-
 // Sample testimonial data - replace with actual testimonials
 const testimonials = [
   {
@@ -86,14 +85,14 @@ export default function TestimonialSection() {
 
 function TestimonialCard({ testimonial }) {
   return (
-    <div className="testimonial-card h-full flex flex-col bg-gray-800 p-6 rounded-lg shadow-lg">
+    <div className="testimonial-card h-full flex flex-col bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700">
       <div className="mb-4">
         <div className="text-primary mb-2 text-yellow-400">
           <Quote className="w-6 h-6" />
         </div>
         <p className="text-muted-foreground text-sm mb-6 text-white">{testimonial.text}</p>
       </div>
-      
+
       <div className="mt-auto">
         <div className="flex justify-between items-center text-white">
           <div className="flex items-center">
@@ -116,7 +115,7 @@ function TestimonialCard({ testimonial }) {
               <p className="text-xs text-muted-foreground">{testimonial.role}</p>
             </div>
           </div>
-          
+
           <div className="flex">
             {[...Array(5)].map((_, i) => (
               <Star
