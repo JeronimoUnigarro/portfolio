@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useState } from 'react'
 import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react'
@@ -52,8 +52,8 @@ const testimonials = [
 
 export default function TestimonialSection() {
   return (
-    <section id="testimonials" className="section-padding bg-black py-16 md:py-24">
-      <div className="container-custom px-4 md:px-8">
+    <section id="testimonials" className="section-padding bg-black py-24 md:py-32">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         <h2 className="text-4xl md:text-5xl font-bold mb-16 text-white text-center">Testimonios</h2>
 
         <Swiper
@@ -85,7 +85,7 @@ export default function TestimonialSection() {
 
 function TestimonialCard({ testimonial }) {
   return (
-    <div className="testimonial-card h-full flex flex-col bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-700">
+    <div className="testimonial-card h-full flex flex-col bg-gray-800 p-8 rounded-lg shadow-lg border border-gray-700">
       <div className="mb-4">
         <div className="text-primary mb-2 text-yellow-400">
           <Quote className="w-6 h-6" />

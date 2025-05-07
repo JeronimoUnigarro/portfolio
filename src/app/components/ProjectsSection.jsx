@@ -3,7 +3,9 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight, ExternalLink, Github } from 'lucide-react'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination } from 'swiper/modules'
 import 'swiper/css'
+import 'swiper/css/pagination'
 
 const projects = [
   {
@@ -95,7 +97,8 @@ export default function ProjectsSection() {
             1024: { slidesPerView: 4 },
           }}
           loop={true}
-          navigation={true}
+          pagination={{ clickable: true }}
+          modules={[Pagination]}
           className="projects-swiper"
         >
           {projects.map((project) => (
@@ -105,6 +108,23 @@ export default function ProjectsSection() {
           ))}
         </Swiper>
       </div>
+
+      <style jsx global>{`
+        .swiper-pagination-bullet {
+          background: white;
+          opacity: 0.5;
+        }
+
+        .swiper-pagination-bullet-active {
+          background: #3b82f6;
+          opacity: 1;
+        }
+
+        .swiper-pagination {
+          bottom: -12px !important;
+          text-align: center;
+        }
+      `}</style>
     </section>
   )
 }
