@@ -8,39 +8,26 @@ import 'swiper/css/pagination'
 const certifications = [
   {
     id: 1,
-    title: 'Scrum Fundamentals Certified',
-    issuer: 'SCRUMstudy',
-    date: 'Diciembre 2023',
-    image: 'https://via.placeholder.com/50',
+    title: 'Nivel Ingles B1',
+    issuer: 'Universidad de Nariño - Udenar',
+    date: 'Mayo 2025',
+    image: '/icons/udenar.png',
   },
   {
     id: 2,
-    title: 'React Developer Certification',
-    issuer: 'Meta',
-    date: 'Septiembre 2023',
-    image: 'https://via.placeholder.com/50',
+    title: 'Tecnicnico en Mantenimiento de computadores',
+    issuer: 'SENA',
+    date: 'Noviembre 2022',
+    image: '/icons/sena.png',
   },
   {
     id: 3,
-    title: 'Python for Data Science',
-    issuer: 'IBM',
-    date: 'Julio 2023',
-    image: 'https://via.placeholder.com/50',
+    title: 'Ingeniero en Software',
+    issuer: 'Universidad Cooperativa de Colombia',
+    date: 'Mayo 2025',
+    image: '/icons/cope.png',
   },
-  {
-    id: 4,
-    title: 'Advanced CSS Techniques',
-    issuer: 'Google',
-    date: 'Junio 2023',
-    image: 'https://via.placeholder.com/50',
-  },
-  {
-    id: 5,
-    title: 'Database Design',
-    issuer: 'Oracle',
-    date: 'Mayo 2023',
-    image: 'https://via.placeholder.com/50',
-  },
+ 
 ]
 
 export default function AchievementsSection() {

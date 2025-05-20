@@ -3,10 +3,9 @@ import { Code2, Database, Server } from 'lucide-react'
 
 export default function AboutSection() {
   return (
-    <section id="about" className="section-padding py-20 bg-black text-white">
+    <section id="about" className="section-padding py-20 bg-color-primary text-white">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-bold mb-12">Acerca de mí</h2>
-        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="mb-8">
@@ -22,15 +21,15 @@ export default function AboutSection() {
               <h3 className="text-xl font-semibold mb-4">Formación Académica:</h3>
               <ul className="space-y-2">
                 <li className="flex items-start">
-                  <span className="text-primary mr-2">•</span>
+                  <span className="text-while mr-2">•</span>
                   <span>Universidad: Cooperativa de Colombia</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-primary mr-2">•</span>
+                  <span className="text-while mr-2">•</span>
                   <span>Carrera: Ingeniería de Software</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-primary mr-2">•</span>
+                  <span className="text-while mr-2">•</span>
                   <span>Semestre actual: 5º semestre</span>
                 </li>
               </ul>
@@ -43,6 +42,8 @@ export default function AboutSection() {
                   { icon: '/icons/react.svg', alt: 'React' },
                   { icon: '/icons/node.svg', alt: 'Node.js' },
                   { icon: '/icons/python.svg', alt: 'Python' },
+                  { icon: '/icons/vite1.svg', alt: 'vite' },
+                  { icon: '/icons/images.jpg', alt: 'Next.js' },
                 ].map((tech, index) => (
                   <div key={index} className="relative w-12 h-12">
                     <Image
@@ -53,18 +54,15 @@ export default function AboutSection() {
                     />
                   </div>
                 ))}
-                <Code2 className="w-6 h-6 text-primary" />
-                <Database className="w-6 h-6 text-primary" />
-                <Server className="w-6 h-6 text-primary" />
               </div>
             </div>
           </div>
           
           <div className="flex justify-center">
             <div className="relative w-64 h-80 md:w-80 md:h-96 rounded-lg overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-t to-transparent z-10"></div>
               <Image
-                src="https://images.pexels.com/photos/7148384/pexels-photo-7148384.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                src="/imagenes/foto_grado.jpg"
                 alt="Jerónimo Unigarro"
                 layout="fill"
                 objectFit="cover"

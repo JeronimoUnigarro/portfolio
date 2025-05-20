@@ -1,19 +1,35 @@
 @import "tailwindcss";
- 
+
 @theme {
-    --color-one: hsl(225, 71%, 27%); 
-    --color-one-light: hsl(225, 71%, 40%); 
-    --color-one-lighter: hsl(225, 71%, 60%); 
+    /* Negro suave para el fondo */
+    --color-background: hsl(0, 0%, 85%);
 
-    --color-two: hsl(0, 0%, 12%); 
-    --color-two-light: hsl(0, 0%, 25%); 
-    --color-two-lighter: hsl(0, 0%, 40%); 
+    /* Rojo para botones y elementos destacados */
+    --color-primary: hsl(0, 100%, 50%); /* Rojo principal */
+    --color-primary-light: hsl(0, 100%, 60%); /* Rojo claro */
+    --color-primary-darker: hsl(0, 100%, 40%); /* Rojo oscuro */
 
-    --color-three: hsl(0, 0%, 100%); 
-    --color-three-light: hsl(0, 0%, 95%); 
-    --color-three-lighter: hsl(0, 0%, 85%); 
+    /* Colores para texto */
+    --color-text-light: hsl(0, 0%, 95%); /* Texto claro */
+    --color-text-dark: hsl(0, 0%, 20%); /* Texto oscuro para contraste */
 
-    --color-four: hsl(204, 94%, 66%); 
-    --color-four-light: hsl(204, 94%, 75%); 
-    --color-four-lighter: hsl(204, 94%, 85%); 
+    /* Colores para sombras y bordes */
+    --color-shadow: hsl(0, 0%, 25%); /* Sombra gris oscuro */
+    --color-border: hsl(0, 0%, 30%); /* Borde gris oscuro */
+
+    /* Colores secundarios para contraste */
+    --color-secondary: hsl(225, 71%, 27%); /* Azul oscuro para dar contraste */
+    --color-secondary-light: hsl(225, 71%, 40%); /* Azul suave para elementos secundarios */
+    --color-secondary-lighter: hsl(225, 71%, 60%); /* Azul claro para acentos menores */
+    
+    /* Colores para fondos alternativos */
+    --color-background-alt: hsl(0, 0%, 25%); /* Fondo alternativo oscuro */
+    --color-background-light: hsl(0, 0%, 35%); /* Fondo más suave para secciones */
+    
+    /* Colores de enlaces y botones secundarios */
+    --color-link: hsl(204, 94%, 66%); /* Color azul claro para enlaces */
+    --color-link-hover: hsl(204, 94%, 75%); /* Color azul claro al pasar el ratón */
+
+    /* Colores para resaltar */
+    --color-highlight: hsl(0, 100%, 80%); /* Color rojo para resaltar texto o botones */
 }

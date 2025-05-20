@@ -20,7 +20,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <p className="text-sm text-muted-foreground text-white">Puedes contactarme por medio de mi teléfono</p>
-                <p className="font-medium text-white">+57 3012345678</p>
+                <p className="font-medium text-white">+57 3163643958</p>
               </div>
             </div>
             
@@ -30,7 +30,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <p className="text-sm text-muted-foreground text-white">Puedes contactarme por medio de mi correo</p>
-                <p className="font-medium text-white">jeronimo.unigarro@ejemplo.edu.co</p>
+                <p className="font-medium text-white">jeronimo.unigarro@campusucc.edu.co </p>
               </div>
             </div>
             
@@ -41,11 +41,11 @@ export default function ContactSection() {
               <div>
                 <p className="text-sm text-muted-foreground text-white">Puedo contactarme por GitHub</p>
                 <a 
-                  href="https://github.com/jeronimouni" 
+                  href="https://github.com/JeronimoUnigarro"
                   target="_blank"
                   className="font-medium hover:text-primary transition-colors text-white"
                 >
-                  github.com/jeronimouni
+                github.com/JeronimoUnigarro
                 </a>
               </div>
             </div>
@@ -57,11 +57,11 @@ export default function ContactSection() {
               <div>
                 <p className="text-sm text-muted-foreground text-white">Puedes encontrarme en Instagram como</p>
                 <a 
-                  href="https://instagram.com/jeronimouni" 
+                  href="https://www.instagram.com/jeronimounigarro/"
                   target="_blank"
                   className="font-medium hover:text-primary transition-colors text-white"
                 >
-                  @jeronimouni
+                  @jeronimounigarro
                 </a>
               </div>
             </div>

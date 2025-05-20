@@ -1,53 +1,48 @@
 'use client'
 
-import { useState } from 'react'
-import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react'
+import { Quote, Star } from 'lucide-react'
 import Image from 'next/image'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Pagination } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
 
-// Sample testimonial data - replace with actual testimonials
 const testimonials = [
   {
     id: 1,
     text: 'Jerónimo es un profesional en crecimiento constante, siempre busca mejorar y superar cada proyecto.',
     author: 'Jacobo Solare',
-    role: 'Profesor de mundo',
-    image: '/profile-jacobo.jpg',
+    role: 'Colega Universitario',
+    image: '/icons/user.png',
     rating: 4,
+    maxLength: true, // Marcar para texto largo
   },
   {
     id: 2,
     text: 'He visto cómo Jerónimo se supera en cada etapa, demostrando compromiso y pasión por la tecnología.',
-    author: 'Santiago Gariol',
-    role: 'Profesor de mundo',
-    image: '/profile-santiago.jpg',
+    author: 'Santiago Getial',
+    role: 'Colega Universitario',
+    image: '/icons/user.png',
     rating: 5,
+    maxLength: true, // Marcar para texto largo
   },
   {
     id: 3,
     text: 'Jerónimo se destaca por su responsabilidad y su enfoque en crear soluciones útiles y relevantes.',
-    author: 'Luis Carlos Rivera',
-    role: 'Profesor de mundo',
-    image: '/profile-luis.jpg',
+    author: 'Luis Carlos Revelo',
+    role: 'Profesor de Universidad',
+    image: '/icons/user.png',
     rating: 5,
   },
   {
     id: 4,
     text: 'Jerónimo tiene una gran capacidad de adaptación y siempre ofrece ideas innovadoras.',
-    author: 'Ana Gómez',
-    role: 'Colaboradora',
-    image: '/profile-ana.jpg',
+    author: 'Yuly Bastidas',
+    role: 'Colega Universitario',
+    image: '/icons/user.png',
     rating: 5,
   },
-  {
-    id: 5,
-    text: 'Su dedicación y capacidad para trabajar en equipo lo convierten en un gran recurso.',
-    author: 'Carlos López',
-    role: 'Mentor',
-    image: '/profile-carlos.jpg',
-    rating: 4,
-  },
+  
 ]
 
 export default function TestimonialSection() {
@@ -56,28 +51,72 @@ export default function TestimonialSection() {
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <h2 className="text-4xl md:text-5xl font-bold mb-16 text-white text-center">Testimonios</h2>
 
-        <Swiper
-          spaceBetween={30}
-          slidesPerView={1}
-          loop={true}
-          autoplay={{ delay: 3000 }}
-          breakpoints={{
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
-          }}
-        >
-          {testimonials.map((testimonial) => (
-            <SwiperSlide key={testimonial.id}>
-              <TestimonialCard testimonial={testimonial} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <div className="relative pb-24"> {/* Aumentado el padding-bottom para dar más espacio */}
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            spaceBetween={30}
+            slidesPerView={1}
+            loop={true}
+            autoplay={{ delay: 3000 }}
+            pagination={{ 
+              clickable: true,
+              dynamicBullets: false, // Desactivar bullets dinámicos para mostrar todos
+              renderBullet: function (index, className) {
+                return `<span class="${className}"></span>`;
+              }
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+            }}
+          >
+            {testimonials.map((testimonial) => (
+              <SwiperSlide key={testimonial.id}>
+                <TestimonialCard testimonial={testimonial} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        {/* Estilos mejorados para los dots */}
+        <style jsx global>{`
+          .swiper-pagination {
+            position: absolute;
+            bottom: -10px; /* Movido más abajo */
+            left: 0;
+            width: 100%;
+            text-align: center;
+            margin-top: 0;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+          }
+
+          .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.3);
+            opacity: 1;
+            margin: 0;
+            transition: all 0.3s ease;
+            border-radius: 50%;
+          }
+
+          .swiper-pagination-bullet-active {
+            background: #facc15; /* amarillo */
+            opacity: 1;
+            transform: scale(1.2);
+            box-shadow: 0 0 8px rgba(250, 204, 21, 0.6);
+          }
+        `}</style>
       </div>
     </section>
   )
@@ -90,7 +129,9 @@ function TestimonialCard({ testimonial }) {
         <div className="text-primary mb-2 text-yellow-400">
           <Quote className="w-6 h-6" />
         </div>
-        <p className="text-muted-foreground text-sm mb-6 text-white">{testimonial.text}</p>
+        <div className={testimonial.maxLength ? "line-clamp-3" : ""}>
+          <p className="text-muted-foreground text-sm text-white">{testimonial.text}</p>
+        </div>
       </div>
 
       <div className="mt-auto">
@@ -101,7 +142,8 @@ function TestimonialCard({ testimonial }) {
                 <Image
                   src={testimonial.image}
                   alt={testimonial.author}
-                  layout="fill"
+                  width={40}
+                  height={40}
                   objectFit="cover"
                 />
               ) : (
