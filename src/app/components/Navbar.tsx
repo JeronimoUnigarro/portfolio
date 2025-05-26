@@ -51,7 +51,10 @@ export default function Navbar() {
   }, [])
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-black/90 backdrop-blur-sm shadow-md' : 'bg-black'}`}>
+    <header
+      className="fixed top-0 w-full z-50 transition-all duration-300 backdrop-blur-sm"
+      style={{ backgroundColor: 'var(--color-background)' }}
+    >
       <div className="max-w-6xl mx-auto flex justify-between items-center h-16 px-4 md:px-8">
         <Link href="/" className="text-white font-bold text-lg">JU</Link>
 
@@ -84,7 +87,10 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <nav className="md:hidden bg-black/95 backdrop-blur-sm">
+        <nav
+          className="md:hidden backdrop-blur-sm"
+          style={{ backgroundColor: 'var(--color-background)' }}
+        >
           <div className="max-w-6xl mx-auto py-4 flex flex-col space-y-4 px-4">
             {navLinks.map((link) => (
               <Link 
