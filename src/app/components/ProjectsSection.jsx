@@ -49,7 +49,6 @@ const projects = [
     description: 'Esta es una aplicaciones para que clientes puedan presentar sus quejas a las empresa que le brindaron el servicio.',
     image: '/icons/reportify.png',
     tags: ['Django', 'Postgresql', 'Vite','React'],
-    demoUrl: '#',
     codeUrl: 'https://github.com/migueltovarb/ISWElectiva110202-11.git',
   },
 ]
