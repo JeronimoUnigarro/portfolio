@@ -15,10 +15,13 @@ export default function HeroSection() {
   
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      
-      {/* Fondo oscuro global */}
-      <div className="absolute inset-0 bg-black z-[-2]">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
+      <div className="absolute inset-0 z-[-2]" style={{ backgroundColor: 'var(--color-background)' }}>
+        <div 
+          className="absolute inset-0" 
+          style={{ 
+            background: 'linear-gradient(to bottom, transparent 0%, var(--color-background) 50%)'
+          }}
+        ></div>
       </div>
       
       {/* Estructura responsive: columna en móvil, fila en desktop */}
@@ -27,7 +30,10 @@ export default function HeroSection() {
         <div className="w-full md:w-1/2 h-[30vh] md:h-screen">
           <div
             className="w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: "url('/icons/codigo.jpg')" }}
+            style={{ 
+              backgroundImage: "url('/icons/codigo.jpg')",
+              borderRight: '1px solid var(--color-border)'
+            }}
           ></div>
         </div>
         
@@ -40,14 +46,15 @@ export default function HeroSection() {
             transition={{ duration: 0.8 }}
           >
             <motion.h1 
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-white leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold leading-tight"
+              style={{ color: 'var(--color-text-light)' }}
               animate={{ opacity: 1 }}
               initial={{ opacity: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
               <div>Soy</div>
-              <div className="md:pl-8 lg:pl-16 xl:pl-24"><span className="text-white">Jeronimo</span></div>
-              <div><span className="text-white">Unigarro</span></div>
+              <div className="md:pl-8 lg:pl-16 xl:pl-24"><span style={{ color: 'var(--color-text-light)' }}>Jeronimo</span></div>
+              <div><span style={{ color: 'var(--color-text-light)' }}>Unigarro</span></div>
             </motion.h1>
             
             <motion.div 
@@ -61,13 +68,14 @@ export default function HeroSection() {
                   {words.map((word, index) => (
                     <motion.span
                       key={index}
-                      className={`text-base md:text-xl text-primary font-medium absolute transition-all duration-500 ease-in-out ${
+                      className={`text-base md:text-xl font-medium absolute transition-all duration-500 ease-in-out ${
                         index === activeWordIndex 
                           ? 'translate-y-0 opacity-100'
                           : 'translate-y-8 opacity-0'
                       }`}
                       style={{
                         top: 0,
+                        color: 'var(--color-primary)',
                         transition: 'transform 0.5s ease, opacity 0.5s ease'
                       }}
                     >
@@ -76,7 +84,10 @@ export default function HeroSection() {
                   ))}
                 </div>
               </div>
-              <span className="animated-cursor ml-1"></span>
+              <span 
+                className="animated-cursor ml-1" 
+                style={{ backgroundColor: 'var(--color-primary)' }}
+              ></span>
             </motion.div>
           </motion.div>
         </div>

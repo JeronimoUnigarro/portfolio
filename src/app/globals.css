@@ -1,35 +1,37 @@
 @import "tailwindcss";
 
 @theme {
-    /* Negro suave para el fondo */
-    --color-background: hsl(0, 0%, 85%);
+  /* Fondo: gris muy oscuro que simula negro */
+  --color-background: hsl(0, 0%, 6%); /* Casi negro */
 
-    /* Rojo para botones y elementos destacados */
-    --color-primary: hsl(0, 100%, 50%); /* Rojo principal */
-    --color-primary-light: hsl(0, 100%, 60%); /* Rojo claro */
-    --color-primary-darker: hsl(0, 100%, 40%); /* Rojo oscuro */
+  /* Texto: blanco suave que no canse la vista */
+  --color-text-light: hsl(0, 0%, 92%); /* Blanco suave */
+  --color-text-dark: hsl(0, 0%, 20%); /* Para fondos claros si se necesita */
 
-    /* Colores para texto */
-    --color-text-light: hsl(0, 0%, 95%); /* Texto claro */
-    --color-text-dark: hsl(0, 0%, 20%); /* Texto oscuro para contraste */
+  /* Primario: rojo suave para detalles (no muy agresivo) */
+  --color-primary: hsl(0, 80%, 55%);
+  --color-primary-light: hsl(0, 85%, 65%);
+  --color-primary-darker: hsl(0, 75%, 45%);
 
-    /* Colores para sombras y bordes */
-    --color-shadow: hsl(0, 0%, 25%); /* Sombra gris oscuro */
-    --color-border: hsl(0, 0%, 30%); /* Borde gris oscuro */
+  /* Sombras: rojo suave */
+  --color-shadow: hsl(0, 70%, 30%); /* Rojo oscuro pero sutil como sombra */
 
-    /* Colores secundarios para contraste */
-    --color-secondary: hsl(225, 71%, 27%); /* Azul oscuro para dar contraste */
-    --color-secondary-light: hsl(225, 71%, 40%); /* Azul suave para elementos secundarios */
-    --color-secondary-lighter: hsl(225, 71%, 60%); /* Azul claro para acentos menores */
-    
-    /* Colores para fondos alternativos */
-    --color-background-alt: hsl(0, 0%, 25%); /* Fondo alternativo oscuro */
-    --color-background-light: hsl(0, 0%, 35%); /* Fondo más suave para secciones */
-    
-    /* Colores de enlaces y botones secundarios */
-    --color-link: hsl(204, 94%, 66%); /* Color azul claro para enlaces */
-    --color-link-hover: hsl(204, 94%, 75%); /* Color azul claro al pasar el ratón */
+  /* Bordes: gris más claro que el fondo para dar sutil separación */
+  --color-border: hsl(0, 0%, 20%);
 
-    /* Colores para resaltar */
-    --color-highlight: hsl(0, 100%, 80%); /* Color rojo para resaltar texto o botones */
+  /* Secundarios: gama azul para contraste */
+  --color-secondary: hsl(225, 50%, 30%);
+  --color-secondary-light: hsl(225, 60%, 40%);
+  --color-secondary-lighter: hsl(225, 70%, 60%);
+
+  /* Fondos alternativos */
+  --color-background-alt: hsl(0, 0%, 12%); /* Fondo ligeramente más claro */
+  --color-background-light: hsl(0, 0%, 18%); /* Para secciones más visibles */
+
+  /* Enlaces y botones secundarios */
+  --color-link: hsl(204, 80%, 70%);
+  --color-link-hover: hsl(204, 80%, 80%);
+
+  /* Resaltados */
+  --color-highlight: hsl(0, 90%, 75%);
 }

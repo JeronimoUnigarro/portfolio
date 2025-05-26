@@ -11,7 +11,7 @@ const projects = [
   {
     id: 1,
     title: 'MediTrack',
-    description: 'Es una aplicación web que ayuda a los usuarios a llevar un control de sus tratamientos médicos y recordatorios de medicamentos. Incluye un historial de dosis y su conexión constante a internet.',
+    description: 'Es una aplicación web que ayuda a los usuarios a llevar un control de sus tratamientos médicos y recordatorios de medicamentos...',
     image: '/imagenes/image.png',
     tags: ['React', 'Next.js','TypeScript', 'Tailwind CSS'],
     demoUrl: 'https://control-medicacion-l5nt-lch7uy12x-jeronimos-projects-a9c7ec10.vercel.app/',
@@ -52,12 +52,18 @@ const projects = [
     demoUrl: '#',
     codeUrl: 'https://github.com/migueltovarb/ISWElectiva110202-11.git',
   },
-  
 ]
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="section-padding bg-black text-white py-16 px-4 sm:px-6 lg:px-12">
+    <section
+      id="projects"
+      className="section-padding py-16 px-4 sm:px-6 lg:px-12"
+      style={{
+        backgroundColor: 'var(--color-background)',
+        color: 'var(--color-text-light)'
+      }}
+    >
       <div className="max-w-screen-xl mx-auto">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center">Proyectos</h2>
 
@@ -84,12 +90,12 @@ export default function ProjectsSection() {
 
       <style jsx global>{`
         .swiper-pagination-bullet {
-          background: white;
+          background: var(--color-border);
           opacity: 0.5;
         }
 
         .swiper-pagination-bullet-active {
-          background: #3b82f6;
+          background: var(--color-link);
           opacity: 1;
         }
 
@@ -104,7 +110,14 @@ export default function ProjectsSection() {
 
 function ProjectCard({ project }) {
   return (
-    <div className="project-card h-full flex flex-col bg-zinc-900 p-4 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+    <div
+      className="project-card h-full flex flex-col p-4 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+      style={{
+        backgroundColor: 'var(--color-background-alt)',
+        boxShadow: `0 4px 12px var(--color-shadow)`,
+        border: `1px solid var(--color-border)`
+      }}
+    >
       <div className="relative h-48 w-full overflow-hidden rounded-lg">
         <Image
           src={project.image}
@@ -112,19 +125,23 @@ function ProjectCard({ project }) {
           layout="fill"
           objectFit="cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.7)] via-[rgba(0,0,0,0.2)] to-transparent"></div>
       </div>
 
       <div className="p-4 flex flex-col flex-grow">
-        <h3 className="text-lg sm:text-xl font-semibold mb-2 text-white">{project.title}</h3>
-        <p className="text-sm sm:text-base mb-4 text-gray-300 flex-grow">{project.description}</p>
+        <h3 className="text-lg sm:text-xl font-semibold mb-2" style={{ color: 'var(--color-text-light)' }}>{project.title}</h3>
+        <p className="text-sm sm:text-base mb-4 flex-grow" style={{ color: 'var(--color-text-light)' }}>{project.description}</p>
 
         <div className="mt-auto">
           <div className="flex flex-wrap gap-2 mb-4">
             {project.tags.map((tag, index) => (
               <span
                 key={index}
-                className="text-xs sm:text-sm px-2 py-1 rounded-full bg-secondary text-secondary-foreground"
+                className="text-xs sm:text-sm px-2 py-1 rounded-full"
+                style={{
+                  backgroundColor: 'var(--color-secondary-light)',
+                  color: 'var(--color-text-light)'
+                }}
               >
                 {tag}
               </span>
@@ -132,20 +149,32 @@ function ProjectCard({ project }) {
           </div>
 
           <div className="flex flex-wrap gap-4">
-            <a
-              href={project.demoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center text-sm font-medium text-blue-500 hover:text-blue-400 transition-colors"
-            >
-              <ExternalLink className="w-4 h-4 mr-1" />
-              Demo
-            </a>
+            {project.demoUrl && (
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-sm font-medium transition-colors"
+                style={{
+                  color: 'var(--color-link)'
+                }}
+                onMouseEnter={e => e.currentTarget.style.color = 'var(--color-link-hover)'}
+                onMouseLeave={e => e.currentTarget.style.color = 'var(--color-link)'}
+              >
+                <ExternalLink className="w-4 h-4 mr-1" />
+                Demo
+              </a>
+            )}
             <a
               href={project.codeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center text-sm font-medium text-green-500 hover:text-green-400 transition-colors"
+              className="flex items-center text-sm font-medium transition-colors"
+              style={{
+                color: 'var(--color-primary)'
+              }}
+              onMouseEnter={e => e.currentTarget.style.color = 'var(--color-primary-light)'}
+              onMouseLeave={e => e.currentTarget.style.color = 'var(--color-primary)'}
             >
               <Github className="w-4 h-4 mr-1" />
               Código

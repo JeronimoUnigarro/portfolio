@@ -42,28 +42,36 @@ const testimonials = [
     image: '/icons/user.png',
     rating: 5,
   },
-  
 ]
 
 export default function TestimonialSection() {
   return (
-    <section id="testimonials" className="section-padding bg-black py-24 md:py-32">
+    <section
+      id="testimonials"
+      className="section-padding py-24 md:py-32"
+      style={{ backgroundColor: 'var(--color-background)' }}
+    >
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-white text-center">Testimonios</h2>
+        <h2
+          className="text-4xl md:text-5xl font-bold mb-16 text-center"
+          style={{ color: 'var(--color-text-light)' }}
+        >
+          Testimonios
+        </h2>
 
-        <div className="relative pb-24"> {/* Aumentado el padding-bottom para dar más espacio */}
+        <div className="relative pb-24">
           <Swiper
             modules={[Autoplay, Pagination]}
             spaceBetween={30}
             slidesPerView={1}
             loop={true}
             autoplay={{ delay: 3000 }}
-            pagination={{ 
+            pagination={{
               clickable: true,
-              dynamicBullets: false, // Desactivar bullets dinámicos para mostrar todos
+              dynamicBullets: false,
               renderBullet: function (index, className) {
-                return `<span class="${className}"></span>`;
-              }
+                return `<span class="${className}"></span>`
+              },
             }}
             breakpoints={{
               640: {
@@ -84,11 +92,10 @@ export default function TestimonialSection() {
           </Swiper>
         </div>
 
-        {/* Estilos mejorados para los dots */}
         <style jsx global>{`
           .swiper-pagination {
             position: absolute;
-            bottom: -10px; /* Movido más abajo */
+            bottom: -10px;
             left: 0;
             width: 100%;
             text-align: center;
@@ -111,10 +118,10 @@ export default function TestimonialSection() {
           }
 
           .swiper-pagination-bullet-active {
-            background: #facc15; /* amarillo */
+            background: var(--color-highlight);
             opacity: 1;
             transform: scale(1.2);
-            box-shadow: 0 0 8px rgba(250, 204, 21, 0.6);
+            box-shadow: 0 0 8px var(--color-highlight);
           }
         `}</style>
       </div>
@@ -124,37 +131,52 @@ export default function TestimonialSection() {
 
 function TestimonialCard({ testimonial }) {
   return (
-    <div className="testimonial-card h-full flex flex-col bg-gray-800 p-8 rounded-lg shadow-lg border border-gray-700">
+    <div
+      className="testimonial-card h-full flex flex-col p-8 rounded-lg shadow-lg border"
+      style={{
+        backgroundColor: 'hsl(0, 0%, 18%)', // var(--color-background-light)
+        borderColor: 'var(--color-border)',
+        boxShadow: `0 4px 6px -1px var(--color-shadow), 0 2px 4px -2px var(--color-shadow)`,
+      }}
+    >
       <div className="mb-4">
-        <div className="text-primary mb-2 text-yellow-400">
+        <div className="mb-2" style={{ color: 'var(--color-primary-light)' }}>
           <Quote className="w-6 h-6" />
         </div>
-        <div className={testimonial.maxLength ? "line-clamp-3" : ""}>
-          <p className="text-muted-foreground text-sm text-white">{testimonial.text}</p>
+        <div className={testimonial.maxLength ? 'line-clamp-3' : ''}>
+          <p style={{ color: 'var(--color-text-light)' }}>{testimonial.text}</p>
         </div>
       </div>
 
       <div className="mt-auto">
-        <div className="flex justify-between items-center text-white">
+        <div
+          className="flex justify-between items-center"
+          style={{ color: 'var(--color-text-light)' }}
+        >
           <div className="flex items-center">
-            <div className="w-10 h-10 rounded-full overflow-hidden bg-secondary relative mr-3 flex items-center justify-center">
+            <div
+              className="w-10 h-10 rounded-full overflow-hidden relative mr-3 flex items-center justify-center"
+              style={{ backgroundColor: 'var(--color-secondary)' }}
+            >
               {testimonial.image ? (
                 <Image
                   src={testimonial.image}
                   alt={testimonial.author}
                   width={40}
                   height={40}
-                  objectFit="cover"
+                  style={{ objectFit: 'cover' }}
                 />
               ) : (
-                <span className="text-xs font-medium text-white">
+                <span className="text-xs font-medium" style={{ color: 'var(--color-text-light)' }}>
                   {testimonial.author.substring(0, 2).toUpperCase()}
                 </span>
               )}
             </div>
             <div>
               <p className="font-medium text-sm">{testimonial.author}</p>
-              <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+              <p className="text-xs" style={{ color: 'var(--color-primary-light)' }}>
+                {testimonial.role}
+              </p>
             </div>
           </div>
 
@@ -163,7 +185,9 @@ function TestimonialCard({ testimonial }) {
               <Star
                 key={i}
                 className={`w-4 h-4 ${
-                  i < testimonial.rating ? 'text-yellow-500 fill-yellow-500' : 'text-muted'
+                  i < testimonial.rating
+                    ? 'text-yellow-500 fill-yellow-500'
+                    : 'text-muted'
                 }`}
               />
             ))}

@@ -27,14 +27,20 @@ const certifications = [
     date: 'Mayo 2025',
     image: '/icons/cope.png',
   },
- 
 ]
 
 export default function AchievementsSection() {
   return (
-    <section id="certifications" className="bg-black py-32 md:py-48">
+    <section
+      id="certifications"
+      style={{ backgroundColor: 'var(--color-background)' }}
+      className="py-32 md:py-48"
+    >
       <div className="container mx-auto px-6 lg:px-20">
-        <h2 className="text-4xl md:text-5xl font-bold mb-20 text-white text-center tracking-tight">
+        <h2
+          className="text-4xl md:text-5xl font-bold mb-20 text-center tracking-tight"
+          style={{ color: 'var(--color-text-light)' }}
+        >
           Certificaciones
         </h2>
 
@@ -49,9 +55,15 @@ export default function AchievementsSection() {
             1024: { slidesPerView: 3 },
           }}
         >
-          {certifications.map(cert => (
+          {certifications.map((cert) => (
             <SwiperSlide key={cert.id} className="flex justify-center px-6">
-              <div className="bg-gray-900 rounded-xl shadow-lg p-6 md:p-8 w-full max-w-[320px] min-h-[200px] flex flex-col justify-between mb-10">
+              <div
+                className="rounded-xl p-6 md:p-8 w-full max-w-[320px] min-h-[200px] flex flex-col justify-between mb-10"
+                style={{
+                  backgroundColor: 'var(--color-background-alt)',
+                  boxShadow: '0 4px 12px var(--color-shadow)', // Sombra personalizada
+                }}
+              >
                 <div className="flex items-center gap-5 mb-4">
                   <img
                     src={cert.image}
@@ -59,11 +71,26 @@ export default function AchievementsSection() {
                     className="w-12 h-12 rounded-full object-cover"
                   />
                   <div>
-                    <h3 className="text-base font-semibold text-white">{cert.title}</h3>
-                    <p className="text-sm text-gray-400">{cert.issuer}</p>
+                    <h3
+                      className="text-base font-semibold"
+                      style={{ color: 'var(--color-text-light)' }}
+                    >
+                      {cert.title}
+                    </h3>
+                    <p
+                      className="text-sm"
+                      style={{ color: 'rgba(255,255,255,0.6)' }}
+                    >
+                      {cert.issuer}
+                    </p>
                   </div>
                 </div>
-                <p className="text-sm text-gray-300">{cert.date}</p>
+                <p
+                  className="text-sm"
+                  style={{ color: 'rgba(255,255,255,0.75)' }}
+                >
+                  {cert.date}
+                </p>
               </div>
             </SwiperSlide>
           ))}

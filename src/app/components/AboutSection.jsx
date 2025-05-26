@@ -1,9 +1,13 @@
 import Image from 'next/image'
-import { Code2, Database, Server } from 'lucide-react'
+
 
 export default function AboutSection() {
   return (
-    <section id="about" className="section-padding py-20 bg-color-primary text-white">
+    <section 
+      id="about" 
+      className="section-padding py-20" 
+      style={{ backgroundColor: 'var(--color-background)', color: 'var(--color-text-light)' }}
+    >
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-bold mb-12">Acerca de mí</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -21,15 +25,15 @@ export default function AboutSection() {
               <h3 className="text-xl font-semibold mb-4">Formación Académica:</h3>
               <ul className="space-y-2">
                 <li className="flex items-start">
-                  <span className="text-while mr-2">•</span>
+                  <span style={{ color: 'var(--color-text-light)' }} className="mr-2">•</span>
                   <span>Universidad: Cooperativa de Colombia</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-while mr-2">•</span>
+                  <span style={{ color: 'var(--color-text-light)' }} className="mr-2">•</span>
                   <span>Carrera: Ingeniería de Software</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-while mr-2">•</span>
+                  <span style={{ color: 'var(--color-text-light)' }} className="mr-2">•</span>
                   <span>Semestre actual: 5º semestre</span>
                 </li>
               </ul>
@@ -59,8 +63,17 @@ export default function AboutSection() {
           </div>
           
           <div className="flex justify-center">
-            <div className="relative w-64 h-80 md:w-80 md:h-96 rounded-lg overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-t to-transparent z-10"></div>
+            <div 
+              className="relative w-64 h-80 md:w-80 md:h-96 rounded-lg overflow-hidden" 
+              style={{ borderColor: 'var(--color-border)' }}
+            >
+              <div 
+                className="absolute inset-0 bg-gradient-to-t z-10" 
+                style={{ 
+                  background: 'linear-gradient(to top, transparent 0%, var(--color-shadow) 100%)',
+                  opacity: 0.3
+                }}
+              ></div>
               <Image
                 src="/imagenes/foto_grado.jpg"
                 alt="Jerónimo Unigarro"
