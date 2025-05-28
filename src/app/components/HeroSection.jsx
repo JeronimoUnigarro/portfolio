@@ -24,9 +24,9 @@ export default function HeroSection() {
         ></div>
       </div>
       
-      {/* Estructura responsive: columna en móvil, fila en desktop */}
+      
       <div className="w-full flex flex-col md:flex-row">
-        {/* Parte izquierda - Imagen (más pequeña en móvil) */}
+        
         <div className="w-full md:w-1/2 h-[30vh] md:h-screen">
           <div
             className="w-full h-full bg-cover bg-center"
@@ -37,7 +37,7 @@ export default function HeroSection() {
           ></div>
         </div>
         
-        {/* Parte derecha - Texto (centrado en móvil) */}
+        
         <div className="w-full md:w-1/2 flex items-center justify-center md:justify-start px-6 md:px-10 py-8 md:py-0">
           <motion.div 
             className="w-full text-center md:text-left pt-0 pb-8 md:pb-16"

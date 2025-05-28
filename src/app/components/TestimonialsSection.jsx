@@ -15,7 +15,7 @@ const testimonials = [
     role: 'Colega Universitario',
     image: '/icons/user.png',
     rating: 4,
-    maxLength: true, // Marcar para texto largo
+    maxLength: true, 
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const testimonials = [
     role: 'Colega Universitario',
     image: '/icons/user.png',
     rating: 5,
-    maxLength: true, // Marcar para texto largo
+    maxLength: true, 
   },
   {
     id: 3,
@@ -134,7 +134,7 @@ function TestimonialCard({ testimonial }) {
     <div
       className="testimonial-card h-full flex flex-col p-8 rounded-lg shadow-lg border"
       style={{
-        backgroundColor: 'hsl(0, 0%, 18%)', // var(--color-background-light)
+        backgroundColor: 'hsl(0, 0%, 18%)', 
         borderColor: 'var(--color-border)',
         boxShadow: `0 4px 6px -1px var(--color-shadow), 0 2px 4px -2px var(--color-shadow)`,
       }}

@@ -58,7 +58,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto flex justify-between items-center h-16 px-4 md:px-8">
         <Link href="/" className="text-white font-bold text-lg">JU</Link>
 
-        {/* Desktop Navigation */}
+        
         <nav className="hidden md:flex space-x-6">
           {navLinks.map((link) => (
             <Link 
@@ -75,7 +75,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Mobile menu button */}
+        
         <button 
           className="md:hidden text-white"
           onClick={() => setIsOpen(!isOpen)}
@@ -85,7 +85,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Navigation */}
+      
       {isOpen && (
         <nav
           className="md:hidden backdrop-blur-sm"

@@ -61,7 +61,7 @@ export default function AchievementsSection() {
                 className="rounded-xl p-6 md:p-8 w-full max-w-[320px] min-h-[200px] flex flex-col justify-between mb-10"
                 style={{
                   backgroundColor: 'var(--color-background-alt)',
-                  boxShadow: '0 4px 12px var(--color-shadow)', // Sombra personalizada
+                  boxShadow: '0 4px 12px var(--color-shadow)', 
                 }}
               >
                 <div className="flex items-center gap-5 mb-4">

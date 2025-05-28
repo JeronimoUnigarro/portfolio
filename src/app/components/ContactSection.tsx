@@ -13,7 +13,7 @@ export default function ContactSection() {
       <div className="container-custom mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
-          {/* Título animado */}
+        
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -41,7 +41,7 @@ export default function ContactSection() {
             </h3>
           </motion.div>
 
-          {/* Información de contacto */}
+          
           <div className="space-y-8">
             <ContactItem
               icon={<Phone className="w-6 h-6" style={{ color: 'var(--color-text-light)' }} />}
