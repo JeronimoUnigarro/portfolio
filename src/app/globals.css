@@ -2,11 +2,11 @@
 
 @theme {
   /* Fondo: gris muy oscuro que simula negro */
-  --color-background: hsl(0, 0%, 6%); /* Casi negro */
+  --color-background: hsl(0, 0%, 6%); 
 
-  /* Texto: blanco suave que no canse la vista */
-  --color-text-light: hsl(0, 0%, 92%); /* Blanco suave */
-  --color-text-dark: hsl(0, 0%, 20%); /* Para fondos claros si se necesita */
+  /* Texto: blanco suave  */
+  --color-text-light: hsl(0, 0%, 92%); 
+  --color-text-dark: hsl(0, 0%, 20%); 
 
   /* Primario: rojo suave para detalles (no muy agresivo) */
   --color-primary: hsl(0, 80%, 55%);
@@ -14,7 +14,7 @@
   --color-primary-darker: hsl(0, 75%, 45%);
 
   /* Sombras: rojo suave */
-  --color-shadow: hsl(0, 70%, 30%); /* Rojo oscuro pero sutil como sombra */
+  --color-shadow: hsl(0, 70%, 30%); 
 
   /* Bordes: gris más claro que el fondo para dar sutil separación */
   --color-border: hsl(0, 0%, 20%);
@@ -25,8 +25,8 @@
   --color-secondary-lighter: hsl(225, 70%, 60%);
 
   /* Fondos alternativos */
-  --color-background-alt: hsl(0, 0%, 12%); /* Fondo ligeramente más claro */
-  --color-background-light: hsl(0, 0%, 18%); /* Para secciones más visibles */
+  --color-background-alt: hsl(0, 0%, 12%); 
+  --color-background-light: hsl(0, 0%, 18%); 
 
   /* Enlaces y botones secundarios */
   --color-link: hsl(204, 80%, 70%);
