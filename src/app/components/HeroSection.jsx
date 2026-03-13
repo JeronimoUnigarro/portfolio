@@ -39,58 +39,67 @@ export default function HeroSection() {
         
         
         <div className="w-full md:w-1/2 flex items-center justify-center md:justify-start px-6 md:px-10 py-8 md:py-0">
-          <motion.div 
-            className="w-full text-center md:text-left pt-0 pb-8 md:pb-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <motion.h1 
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold leading-tight"
-              style={{ color: 'var(--color-text-light)' }}
-              animate={{ opacity: 1 }}
-              initial={{ opacity: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
+  <motion.div 
+    className="w-full text-center md:text-left pt-0 pb-8 md:pb-16"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+  >
+    <motion.h1 
+      className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold leading-tight"
+      style={{ color: 'var(--color-text-light)' }}
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      transition={{ delay: 0.2, duration: 0.8 }}
+    >
+      <span className="block">Soy</span>
+
+      <span className="block md:pl-8 lg:pl-16 xl:pl-24">
+        <span style={{ color: 'var(--color-text-light)' }}>Jeronimo</span>
+      </span>
+
+      <span className="block">
+        <span style={{ color: 'var(--color-text-light)' }}>Unigarro</span>
+      </span>
+
+    </motion.h1>
+    
+    <motion.div 
+      className="mt-3 md:mt-4 flex items-center justify-center md:justify-start"
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      transition={{ delay: 0.6, duration: 0.8 }}
+    >
+      <div className="relative h-6 md:h-8 overflow-hidden">
+        <div className="flex flex-col">
+          {words.map((word, index) => (
+            <motion.span
+              key={index}
+              className={`text-base md:text-xl font-medium absolute transition-all duration-500 ease-in-out ${
+                index === activeWordIndex 
+                  ? 'translate-y-0 opacity-100'
+                  : 'translate-y-8 opacity-0'
+              }`}
+              style={{
+                top: 0,
+                color: 'var(--color-primary)',
+                transition: 'transform 0.5s ease, opacity 0.5s ease'
+              }}
             >
-              <div>Soy</div>
-              <div className="md:pl-8 lg:pl-16 xl:pl-24"><span style={{ color: 'var(--color-text-light)' }}>Jeronimo</span></div>
-              <div><span style={{ color: 'var(--color-text-light)' }}>Unigarro</span></div>
-            </motion.h1>
-            
-            <motion.div 
-              className="mt-3 md:mt-4 flex items-center justify-center md:justify-start"
-              animate={{ opacity: 1 }}
-              initial={{ opacity: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-            >
-              <div className="relative h-6 md:h-8 overflow-hidden">
-                <div className="flex flex-col">
-                  {words.map((word, index) => (
-                    <motion.span
-                      key={index}
-                      className={`text-base md:text-xl font-medium absolute transition-all duration-500 ease-in-out ${
-                        index === activeWordIndex 
-                          ? 'translate-y-0 opacity-100'
-                          : 'translate-y-8 opacity-0'
-                      }`}
-                      style={{
-                        top: 0,
-                        color: 'var(--color-primary)',
-                        transition: 'transform 0.5s ease, opacity 0.5s ease'
-                      }}
-                    >
-                      {word}
-                    </motion.span>
-                  ))}
-                </div>
-              </div>
-              <span 
-                className="animated-cursor ml-1" 
-                style={{ backgroundColor: 'var(--color-primary)' }}
-              ></span>
-            </motion.div>
-          </motion.div>
+              {word}
+            </motion.span>
+          ))}
         </div>
+      </div>
+
+      <span 
+        className="animated-cursor ml-1" 
+        style={{ backgroundColor: 'var(--color-primary)' }}
+      ></span>
+    </motion.div>
+
+  </motion.div>
+</div>
       </div>
     </section>
   )
